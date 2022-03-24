@@ -21,4 +21,17 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		movement += JUMP
 	
+	if not is_on_floor():
+		if movement.y > 0:
+			$AnimatedSprite.play("jump")
+		else:
+			$AnimatedSprite.play("fall")
+	else:
+		if abs(movement.x) > 0.1:
+			$AnimatedSprite.play("walk")
+		else:
+			$AnimatedSprite.play("stand")
+			
+	$AnimatedSprite.flip_h = movement.x < 0
+	
 	movement = move_and_slide(movement, UP)
