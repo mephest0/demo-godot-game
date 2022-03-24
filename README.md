@@ -2,6 +2,9 @@
 
 ## Assets used in the project
 * Kenney's [Toon Characters 1](https://kenney.nl/assets/toon-characters-1)
+  * For the Player sprites and animations
+* Kenney's [Jumper Pack](https://kenney.nl/assets/jumper-pack)
+  * For the animated coin
 
 ## Links for inspo
 * [Reddit <3](https://reddit.com/r/godot)
