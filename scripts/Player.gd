@@ -1,10 +1,10 @@
 extends KinematicBody2D
 
 
+export var jump_power = 100
 export var SPEED = 10
-const JUMP = Vector2(0, -100)
 
-const G = Vector2(0, 2)
+const G = Vector2(0, 3)
 const UP = Vector2(0, -1)
 
 var movement = Vector2()
@@ -19,13 +19,15 @@ func _physics_process(delta):
 		movement.x += SPEED
 		
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		movement += JUMP
+		movement += Vector2(0, -jump_power)
 	
 	if not is_on_floor():
 		if movement.y > 0:
 			$AnimatedSprite.play("jump")
 		else:
 			$AnimatedSprite.play("fall")
+			
+			$AnimatedSprite.flip_h = movement.x < 0
 	else:
 		if abs(movement.x) > 0.1:
 			$AnimatedSprite.play("walk")
