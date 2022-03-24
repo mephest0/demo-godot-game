@@ -11,6 +11,7 @@ var movement = Vector2()
 
 
 func _physics_process(delta):
+	movement.x *= (1 - delta / 0.1)
 	movement += G
 	
 	if Input.is_action_pressed("move_left"):
@@ -22,14 +23,12 @@ func _physics_process(delta):
 		movement += Vector2(0, -jump_power)
 	
 	if not is_on_floor():
-		if movement.y > 0:
+		if movement.y > - 1:
 			$AnimatedSprite.play("jump")
 		else:
 			$AnimatedSprite.play("fall")
-			
-			$AnimatedSprite.flip_h = movement.x < 0
 	else:
-		if abs(movement.x) > 0.1:
+		if abs(movement.x) > 0.3:
 			$AnimatedSprite.play("walk")
 		else:
 			$AnimatedSprite.play("stand")
