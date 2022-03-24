@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/gold_2.png" type="Texture" id=2]
 [ext_resource path="res://assets/gold_1.png" type="Texture" id=3]
 [ext_resource path="res://assets/gold_4.png" type="Texture" id=4]
-[ext_resource path="res://scenes/Coin.gd" type="Script" id=5]
+[ext_resource path="res://scripts/Coin.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4, 8 )
@@ -26,6 +26,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 2 )
+frame = 2
 playing = true
 
 [node name="Timer" type="Timer" parent="."]
