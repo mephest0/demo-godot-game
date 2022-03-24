@@ -4,7 +4,7 @@ extends KinematicBody2D
 export var jump_power = 100
 export var SPEED = 10
 
-const G = Vector2(0, 3)
+const G = Vector2(0, 9)
 const UP = Vector2(0, -1)
 
 var movement = Vector2()
